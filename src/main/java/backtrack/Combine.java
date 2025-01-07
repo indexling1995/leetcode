@@ -18,7 +18,7 @@ public class Combine {
 	static LinkedList<Integer> path = new LinkedList<>();
 
 	public static List<List<Integer>> solution1(int n, int k) {
-		backtracking1(n, k, 1);
+		backtracking2(n, k, 1);
 		return result;
 	}
 

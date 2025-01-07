@@ -35,12 +35,12 @@ public class TrimBST {
 	}
 
 	public static TreeNode solution2(TreeNode root, int low, int high) {
-		if(root == null) {
+		if (root == null) {
 			return null;
 		}
 		// 处理头结点，让root移动到[L, R] 范围内，注意是左闭右闭
-		while(root != null && (root.val < low || root.val > high)){
-			if(root.val < low) {
+		while (root != null && (root.val < low || root.val > high)) {
+			if (root.val < low) {
 				root = root.right;
 			} else {
 				root = root.left;
@@ -50,8 +50,8 @@ public class TrimBST {
 		TreeNode curr = root;
 
 		//此时root已经在[L, R] 范围内，处理左孩子元素小于L的情况
-		while(curr != null){
-			while(curr.left != null && curr.left.val < low){
+		while (curr != null) {
+			while (curr.left != null && curr.left.val < low) {
 				curr.left = curr.left.right;
 			}
 			curr = curr.left;
@@ -60,8 +60,8 @@ public class TrimBST {
 		curr = root;
 
 		//此时root已经在[L, R] 范围内，处理右孩子大于R的情况
-		while(curr != null){
-			while(curr.right != null && curr.right.val > high){
+		while (curr != null) {
+			while (curr.right != null && curr.right.val > high) {
 				curr.right = curr.right.left;
 			}
 			curr = curr.right;
@@ -84,7 +84,7 @@ public class TrimBST {
 
 		node4.left = node5;
 
-		TreeNode root = solution1(node1, 1, 3);
+		TreeNode root = solution2(node1, 1, 3);
 		System.out.println(root.val);
 	}
 
