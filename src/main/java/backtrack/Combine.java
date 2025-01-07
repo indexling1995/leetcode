@@ -60,7 +60,7 @@ public class Combine {
 			for (Integer item : path) {
 				System.out.print(item + " ");
 			}
-			System.out.println();
+			System.out.println("end");
 		}
 	}
 
